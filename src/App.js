@@ -16,13 +16,13 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    Axios.get('http://jsonplaceholder.typicode.com/todos?_limit=10')
+    Axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10')
     .then(res => this.setState({ todos: res.data }));
   }
 
   // Delete Todo
   delTodo = (id) => {
-    Axios.delete(`http://jsonplaceholder.typicode.com/todos/${id}`)
+    Axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
     .then(res => this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)] }));
   }
 
@@ -40,7 +40,7 @@ class App extends React.Component {
 
   // Add Todo
   addTodo = (title) => {
-    Axios.post('http://jsonplaceholder.typicode.com/todos', {
+    Axios.post('https://jsonplaceholder.typicode.com/todos', {
       title,
       completed: false
     })
